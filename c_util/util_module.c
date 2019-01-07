@@ -1,33 +1,33 @@
 #include <Python.h>
-#include "c_ext_system.c"
+#include "util_system.c"
 
 static PyObject* _system(PyObject *self, PyObject *args);
 
-static PyMethodDef c_ext_methods[] = 
+static PyMethodDef util_methods[] = 
 {
     {"system", _system, METH_VARARGS, "Execute a shell command."},
     {NULL, NULL, 0, NULL}
 };
 
-static struct PyModuleDef c_ext_module = 
+static struct PyModuleDef util_module = 
 {
     PyModuleDef_HEAD_INIT,
-    "c_ext",
+    "util",
     NULL,
     -1,
-    c_ext_methods
+    util_methods
 };
 
-PyMODINIT_FUNC PyInit_c_ext(void)
+PyMODINIT_FUNC PyInit_util(void)
 {
     PyObject *m;
 
-    m = PyModule_Create(&c_ext_module);
+    m = PyModule_Create(&util_module);
     if(m == NULL)
         return NULL;
 
-    SystemError = PyErr_NewException("c_ext.SystemError", NULL, NULL);
+    SystemError = PyErr_NewException("util.SystemError", NULL, NULL);
     Py_INCREF(SystemError);
-    PyModule_AddObject(m, "error", SystemError);
+    PyModule_AddObject(m, "SystemError", SystemError);
     return m;
 }

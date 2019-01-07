@@ -1,5 +1,5 @@
 #include <Python.h>
-#include "c_ext_error.h"
+#include "util_error.h"
 
 static PyObject* _system(PyObject *self, PyObject *args)
 {
