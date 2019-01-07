@@ -1,4 +1,4 @@
-# c_extention_module
+# c extention module
 Extension module of Python
 
-python setup.py install
+"python setup.py install"
