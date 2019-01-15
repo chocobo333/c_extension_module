@@ -25,6 +25,7 @@ static int fibs_init(fibs* self, PyObject *args, PyObject *kwds)
     return 0;
 }
 
+
 static PyObject* fibs_iter(PyObject *self)
 {
     Py_INCREF(self);

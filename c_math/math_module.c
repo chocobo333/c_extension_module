@@ -1,9 +1,11 @@
 #include <Python.h>
 #include "math_fibs.c"
+#include "math_sqrt.c"
 
 static PyMethodDef math_methods[] = 
 {
     // {"system", _system, METH_VARARGS, "Execute a shell command."},
+    {"sqrt",_sqrt,METH_VARARGS, "Calculate the square root."},
     {NULL, NULL, 0, NULL}
 };
 
